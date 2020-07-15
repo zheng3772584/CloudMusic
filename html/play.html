@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>播放</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/play.css">
+</head>
+
+<body>
+    <!-- 
+        接收上一个页面的id值
+        然后根据这个id值取加载歌曲，进行播放
+     -->
+
+    <!-- <div class="music"> -->
+    <!--     <!-- 音频标签，src是音频地址 controls音频标签可见 -->
+    <!-- <audio src="" controls></audio> 
+   -->
+    <!-- </div> -->
+
+    <audio src="" id="audio"></audio>
+    <!-- src换成请求地址 -->
+
+    <!-- 大容器，相对定位 -->
+    <div class="container">
+        <!-- 唱针，唱片的针 -->
+        <div class="needle"></div>
+
+        <!-- 唱片 -->
+        <div class="song-info">
+            <!-- 关键在于切换 disc盒子的playing和paused样式 -->
+            <div class="disc roll paused">
+                <div class="song-img">
+                    <img src="" alt="">
+                </div>
+            </div>
+
+            <div class="song-lyric">
+                <h2></h2>
+                <p></p>>
+            </div>
+
+            <div class="range-container">
+                <!-- 进度条 value是0-100 -->
+                <input id="range" type="range" value="0" class="custom-range">
+            </div>
+        </div>
+
+        <!-- 毛玻璃背景 -->
+        <div class="bg">
+            <img src="" alt="">
+        </div>
+
+    </div>
+
+</body>
+
+<!-- 记住：先应用库，再引用我们自己写的逻辑代码 -->
+<script src="../node_modules/axios/dist/axios.js"></script>
+<script src="../node_modules/lyric-parser/dist/lyric.js"></script>
+<script src="../js/changeHeight.js"></script>
+<script src="../js/play.js"></script>
+
+</html>

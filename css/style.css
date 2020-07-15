@@ -1,0 +1,318 @@
+/* 网页中默认body ul li 都有margin和padding */
+
+.container{
+    margin: 0px;
+}
+/* 顶部栏页面样式 */
+.header{
+    /* 默认width: 100%; 可不写 */
+    height: 84px;
+    background-color: #D43C33;
+    display: flex;
+    justify-content: space-between;
+    /* align-items : 垂直控制 */
+    align-items: center;
+    /* 上下为0 左右为15px */
+    padding: 0 15px ;
+}
+/* logo大小 */
+.topsvg{
+    width: 142px;
+    height: 25px;
+}
+/* 下载按钮的样式 */
+.download-button{
+    widows: 100px;
+    height: 36px;
+    border-radius: 20px;
+    /* 没有外边框 */
+    border: none;
+    background-color: white;
+    color: #D43C33;
+    /* 
+    text-align: center;
+    line-height: 36px; 等于竖直高度，文字即可居中
+     */
+    text-align: center;
+    line-height: 36px;
+}
+
+/* tab栏 */
+.tab{
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid rgb(228, 228, 228);
+}
+.tabItem{
+    flex: 1;
+    height: 40px;
+    /* line-height等于height 竖直居中 */
+    line-height: 40px;
+    /* 水平居中 */
+    text-align: center;
+}
+
+input[type="radio"]{
+    display: none;
+}
+
+.content{
+    width: 100%;
+    overflow: hidden;
+}
+.inner{
+    width: 300%;
+    transition: margin-left 0.4s;
+}
+.screen{
+    width: 33.33%;
+    float: left;
+}
+
+#s1:checked~.tab>label:nth-child(1){
+    color: #D43C33;
+    font-weight: bold;
+}
+#s2:checked~.tab>label:nth-child(2){
+    color: #D43C33;
+    font-weight: bold;
+}
+#s3:checked~.tab>label:nth-child(3){
+    color: #D43C33;
+    font-weight: bold;
+}
+
+#s1:checked~.content>.inner{
+    margin-left: 0%;
+}
+#s2:checked~.content>.inner{
+    margin-left: -100%;
+}
+#s3:checked~.content>.inner{
+    margin-left: -200%;
+}
+
+/* 推荐歌单   > 表示rec-song有子级ul */
+.rec-song>ul
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+}
+.rec-song>ul>li
+{
+    width: 33%;
+    margin-bottom: 15px;
+}
+/* 图要百分百显示 */
+.rec-song>ul>li>img
+{
+    width: 100%;
+}
+.rec-song>ul>li>p
+{
+    /* text-align: center; */
+    font-size: 13px;
+}
+
+/* 推荐歌单 */
+.rec-song
+{
+    width: 100%;
+    /* 和手机屏幕一样大，百分比记住，是继承父级宽度百分之多少 */
+    display: flex;
+    justify-content: space-between;
+    /* flex默认不会换行，无论多少个都要挤在一起  flex-wrap控制换行 */
+    flex-wrap: wrap;
+}
+.rec-song>a{
+    /* 去掉a链接默认的下划线 */
+    text-decoration: none;
+    color: #333;
+    width: 32.5%;
+    display: block;
+}
+.song-item
+{
+    /* 继承a的宽度 */
+    width: 100%;
+}
+.song-item>img{
+    width: 100%;
+}
+
+.title
+{
+    height: 20px;
+    font-size: 14px;
+    margin-bottom: 10dp;
+}
+/* 伪类，伪元素 */
+.title>p::before
+{
+    content: "";
+    width: 3px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    background: #D43C33;
+    margin-right: 10px;
+}
+
+/* 最新音乐样式 */
+.newSong a{
+    /* 父相对定位 */
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    height: 48px;
+    border-bottom: 1px solid #efefef;
+    margin-bottom: 5px;
+}
+.newSong li {
+    padding-left: 10px;
+}
+.newSong li .song-title-container{
+    display: flex;
+    /* 记住：flex是从父级传递给子集 */
+    width: 100%;
+    justify-content: flex-start;
+    /* 默认左对齐 */
+
+    /* 父相对定位 */
+    position: relative;
+}
+
+.newSong>ul>li>p{
+    font-size: 14px;
+    color: #333333;
+    white-space: normal;
+}
+.newSong>ul>li>span{
+    display: 1;
+    /* 占满剩余空间 */
+    overflow: hidden;
+    /* 强制中文不换行 */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: gray;
+}
+
+.song-title{
+    margin-right: 10px;
+}
+.song-title.p{
+    width: 100%;
+    color: #333;
+}
+.song-des{
+    flex: 1;
+    /* 自动分配剩余空间，只能在display:flex里面使用 */
+    white-space: nowrap;
+    overflow: hidden;
+    color: gray;
+}
+.song-des>p{  
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.play-icon{
+    width: 22px;
+    height: 22px;
+    background: url(../img/index_icon_2x.png) no-repeat;
+    /* 整张图缩小一半  再向左移24取到播放图标 */
+    background-size: 166px 97px;
+    background-position:-24px 0;
+    border-radius: 50%;
+    /* 子绝对定位 */
+    position: absolute;
+    /* 放在最右边 */
+    right: 10px;
+    transform: translateY(30%);
+}
+
+.singer{
+    font-size: 12px;
+    color: gray;
+    margin-top: 5px;
+}
+.sqicon{
+    background: url(../img/index_icon_2x.png);
+    background-size: 166px 97px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 12px;
+    height: 8px;
+}
+
+/* 搜索界面样式 */
+.search-bar{
+    height: 60px;
+    padding: 15px 10px;
+}
+.search-bar>input[type="text"]{
+    height: 30px;
+    width: 100%;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    background: rgb(253, 249, 249);
+    padding: 0 10px;
+}
+
+.search-rem,.search-res{
+    display: none;
+}
+.search-hot{
+    display: flex;
+    flex-wrap: wrap;
+}
+.search-hot>h2{
+    font-size: 14px;
+    font-weight: normal;
+    padding: 10px 0 0 15px;
+}
+.search-hot{
+    padding: 10px 10px 0 10px;
+}
+.search-hot>span{
+    padding: 4px 8px;
+    font-size: 13px;
+    margin: 0 8px 10px 0;
+    border: 1px solid rgb(230, 230, 230);
+    border-radius: 35px;
+    display: block;
+}
+
+.search-list>li{
+    height: 38px;
+    line-height: 38px;
+    border-bottom: 1px solid rgb(230, 230, 230);
+    font-size: 13px;
+    color: #333;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-res>ol>li{
+    display: flex;
+    height: 66px;
+    align-items: center;
+    border-bottom: 1px solid rgb(230, 230, 230);
+}
+
+.search-res>ol>li>img{
+    width: 50px;
+    height: 50px;
+}
+.search-res>ol>li>p{
+    margin-left: 15px;
+    font-size: 16px;
+    width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #333;
+}

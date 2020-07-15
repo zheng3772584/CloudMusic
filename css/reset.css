@@ -1,0 +1,27 @@
+/* 每个页面都要引用的 */
+*{
+    /* 所有元素 */
+    margin: 0;
+    padding: 0;
+    /*  box-sizing:
+        border-box  加入padding不会变大 
+        默认是content-box，加入padding盒子会变大     */
+    box-sizing: border-box ;
+    /* 选择框不会变大变小 */
+    resize: none;
+    /* 移动端的手触碰按钮可能会黄色高亮效果，不要，透明化 */
+    -webkit-tap-highlight-color: transparent;
+    /* li的样式设为None,没有前面的点 */
+    list-style: none;
+    /* 去掉外轮廓线 */
+    outline: none;
+}
+
+a{
+    /* 没有下划线，有下划线是underline */
+    text-decoration: none;
+}
+
+html,body{
+    height: 100%;
+}

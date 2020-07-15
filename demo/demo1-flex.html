@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            background: red;
+            display: flex;
+            /* justify-content : 水平控制 */
+            justify-content: space-between;
+            /* align-items : 垂直控制 */
+            align-items: center;
+            /* 弹性打断 */
+            flex-wrap: wrap;
+        }
+        .a1,.a2,.a3{
+            width: 80px;
+            height: 80px;
+        }
+        .a1{
+            background: blue;
+        }
+        .a2{
+            background: brown;
+        }
+        .a3{
+            background: gray;
+        }
+    </style>
+</head>
+<body>
+    <!-- flex弹性布局
+        1.通过父级传入和控制
+     -->
+    <div class="box">
+        <div class="a1"></div>
+        <div class="a2"></div>
+        <div class="a3"></div>
+        <div class="a1"></div>
+        <div class="a2"></div>
+    </div>
+</body>
+</html>
